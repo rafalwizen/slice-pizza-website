@@ -11,7 +11,11 @@ const amaticSC = Amatic_SC({
 export const metadata: Metadata = {
   title: "Slice Pizza - Autentyczne smaki Włoch",
   description: "Najlepsza pizzeria w mieście. Autentyczne włoskie smaki przygotowane z pasją.",
-    generator: 'v0.dev'
+  openGraph: {
+    title: "Slice Pizza - Autentyczne smaki Włoch",
+    description: "Najlepsza pizzeria w mieście. Autentyczne włoskie smaki przygotowane z pasją.",
+    images: ["logo.png"]
+  },
 }
 
 export default function RootLayout({
