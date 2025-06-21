@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "BadRendezvousScript";
+  src: url("/fonts/BadRendezvousScript.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -9,6 +17,7 @@ html {
 body {
   background-color: #000000;
   color: #ffffff;
+  font-family: "BadRendezvousScript", cursive;
 }
 
 /* Custom scrollbar */
