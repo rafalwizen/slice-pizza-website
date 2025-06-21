@@ -18,8 +18,8 @@ const translations = {
     contact: "Kontakt",
 
     // Hero
-    heroTitle: "Witamy w naszej Pizzerii!",
-    heroSubtitle: "Autentyczne smaki Włoch w sercu miasta",
+    heroTitle: "Pizza nie musi być szybka...\nMusi być dobra!",
+    heroSubtitle: "U nas liczy się smak, nie skróty.",
 
     // Menu
     menuTitle: "Nasze Specjalności",
@@ -49,8 +49,8 @@ const translations = {
     contact: "Contact",
 
     // Hero
-    heroTitle: "Welcome to Our Pizzeria!",
-    heroSubtitle: "Authentic Italian flavors in the heart of the city",
+    heroTitle: "Pizza doesn't have to be fast...\nIt has to be good!",
+    heroSubtitle: "Here, taste matters, not shortcuts.",
 
     // Menu
     menuTitle: "Our Specialties",

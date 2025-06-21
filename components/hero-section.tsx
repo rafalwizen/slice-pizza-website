@@ -70,7 +70,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/60 z-10"></div>
 
         {/* Content */}
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
+        <div className="relative z-20 text-center px-4 max-w-6xl mx-auto">
           <div className="mb-8">
             <Image
                 ref={logoRef}
@@ -82,7 +82,7 @@ export default function HeroSection() {
             />
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-[#cb3b32] mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-[#cb3b32] mb-6 leading-tight whitespace-pre-line">
             {t("heroTitle")}
           </h1>
 
