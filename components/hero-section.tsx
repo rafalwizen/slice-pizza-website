@@ -2,12 +2,14 @@
 
 import { useLanguage } from "@/contexts/language-context"
 import Image from "next/image"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
+import { gsap } from "gsap"
 
 export default function HeroSection() {
   const { t } = useLanguage()
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
+  const logoRef = useRef<HTMLImageElement>(null)
 
   const slides = ["/image2.jpeg", "/image1.jpeg"]
 
@@ -15,11 +17,32 @@ export default function HeroSection() {
     // Start zoom effect immediately
     setIsLoaded(true)
 
+    // GSAP Logo Animation
+    if (logoRef.current) {
+      // Set initial state
+      gsap.set(logoRef.current, {
+        scale: 3, // Increased from 2 to 3 (50% bigger than previous 2x)
+        rotation: 0,
+      })
+
+      // Create timeline for logo animation
+      const tl = gsap.timeline()
+
+      tl.to(logoRef.current, {
+        rotation: 720, // 2 full rotations
+        scale: 1.5, // Final size 50% bigger than original
+        duration: 2.5,
+        ease: "back.out(1.7)",
+      })
+    }
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, 5000) // Change slide every 5 seconds
 
-    return () => clearInterval(interval)
+    return () => {
+      clearInterval(interval)
+    }
   }, [slides.length])
 
   return (
@@ -50,6 +73,7 @@ export default function HeroSection() {
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <div className="mb-8">
             <Image
+                ref={logoRef}
                 src="/logo.png"
                 alt="Slice Pizza Logo"
                 width={300}
