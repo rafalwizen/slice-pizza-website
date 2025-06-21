@@ -3,7 +3,6 @@
 import { useLanguage } from "@/contexts/language-context"
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
-import { gsap } from "gsap"
 
 export default function HeroSection() {
   const { t } = useLanguage()
@@ -14,40 +13,23 @@ export default function HeroSection() {
   const slides = ["/image2.jpeg", "/image1.jpeg"]
 
   useEffect(() => {
-    // Start zoom effect immediately
     setIsLoaded(true)
 
-    // GSAP Logo Animation
+    // CSS Animation instead of GSAP
     if (logoRef.current) {
-      // Set initial state
-      gsap.set(logoRef.current, {
-        scale: 3, // Increased from 2 to 3 (50% bigger than previous 2x)
-        rotation: 0,
-      })
-
-      // Create timeline for logo animation
-      const tl = gsap.timeline()
-
-      tl.to(logoRef.current, {
-        rotation: 720, // 2 full rotations
-        scale: 1.5, // Final size 50% bigger than original
-        duration: 2.5,
-        ease: "back.out(1.7)",
-      })
+      logoRef.current.style.animation = "logoEntrance 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards"
     }
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000) // Change slide every 5 seconds
+    }, 5000)
 
-    return () => {
-      clearInterval(interval)
-    }
+    return () => clearInterval(interval)
   }, [slides.length])
 
   return (
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Slideshow backgrounds */}
+        {/* Slideshow backgrounds with optimized loading */}
         {slides.map((slide, index) => (
             <div
                 key={index}
@@ -55,13 +37,16 @@ export default function HeroSection() {
                     index === currentSlide ? "opacity-100" : "opacity-0"
                 }`}
             >
-              <div
-                  className={`w-full h-full bg-cover bg-center bg-no-repeat transform transition-transform duration-[6000ms] ease-out ${
+              <Image
+                  src={slide || "/placeholder.svg"}
+                  alt={`Background ${index + 1}`}
+                  fill
+                  priority={index === 0}
+                  quality={85}
+                  sizes="100vw"
+                  className={`object-cover transition-transform duration-[6000ms] ease-out ${
                       index === currentSlide && isLoaded ? "scale-110" : "scale-100"
                   }`}
-                  style={{
-                    backgroundImage: `url(${slide})`,
-                  }}
               />
             </div>
         ))}
@@ -78,7 +63,9 @@ export default function HeroSection() {
                 alt="Slice Pizza Logo"
                 width={300}
                 height={150}
-                className="mx-auto h-24 md:h-32 w-auto mb-8"
+                priority
+                quality={90}
+                className="mx-auto h-24 md:h-32 w-auto mb-8 logo-animation"
             />
           </div>
 
@@ -88,6 +75,20 @@ export default function HeroSection() {
 
           <p className="text-2xl md:text-3xl text-white/90 max-w-2xl mx-auto leading-relaxed">{t("heroSubtitle")}</p>
         </div>
+
+        <style jsx>{`
+        @keyframes logoEntrance {
+          0% {
+            transform: scale(3) rotate(0deg);
+          }
+          100% {
+            transform: scale(1.5) rotate(720deg);
+          }
+        }
+        .logo-animation {
+          transform: scale(3);
+        }
+      `}</style>
       </section>
   )
 }

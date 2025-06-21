@@ -1,11 +1,10 @@
 "use client"
 
 import type React from "react"
-
 import { useLanguage } from "@/contexts/language-context"
-import { useState } from "react"
+import { useState, memo, useCallback } from "react"
 
-export default function ContactSection() {
+const ContactSection = memo(function ContactSection() {
   const { t } = useLanguage()
   const [formData, setFormData] = useState({
     name: "",
@@ -13,20 +12,21 @@ export default function ContactSection() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({ name: "", email: "", message: "" })
-  }
+  const handleSubmit = useCallback(
+      (e: React.FormEvent) => {
+        e.preventDefault()
+        console.log("Form submitted:", formData)
+        setFormData({ name: "", email: "", message: "" })
+      },
+      [formData],
+  )
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({
+      ...prev,
       [e.target.name]: e.target.value,
-    })
-  }
+    }))
+  }, [])
 
   return (
       <section id="contact" className="py-20 bg-black">
@@ -110,4 +110,6 @@ export default function ContactSection() {
         </div>
       </section>
   )
-}
+})
+
+export default ContactSection

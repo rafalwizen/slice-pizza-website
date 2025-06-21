@@ -2,22 +2,23 @@
 
 import { useLanguage } from "@/contexts/language-context"
 import Image from "next/image"
+import { memo, useCallback } from "react"
 
-export default function Header() {
+const Header = memo(function Header() {
   const { language, setLanguage, t } = useLanguage()
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
     }
-  }
+  }, [])
 
   return (
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-[#cb3b32]/20">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-8">
-            <Image src="/logo.png" alt="Slice Pizza Logo" width={120} height={60} className="h-12 w-auto" />
+            <Image src="/logo.png" alt="Slice Pizza Logo" width={120} height={60} priority className="h-12 w-auto" />
             <div className="hidden md:flex space-x-6">
               <button
                   onClick={() => scrollToSection("menu")}
@@ -63,4 +64,6 @@ export default function Header() {
         </nav>
       </header>
   )
-}
+})
+
+export default Header

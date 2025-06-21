@@ -2,21 +2,18 @@
 
 import { useLanguage } from "@/contexts/language-context"
 import Image from "next/image"
-import { useRef } from "react"
+import { useRef, memo } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { menuItems } from "@/data/menu-items"
 
-export default function MenuSection() {
+const MenuSection = memo(function MenuSection() {
   const { t } = useLanguage()
   const { language } = useLanguage()
   const scrollRef = useRef<HTMLDivElement>(null)
 
-  // Calculate scroll distance based on container width
   const getScrollDistance = () => {
     if (scrollRef.current) {
-      const containerWidth = scrollRef.current.offsetWidth
-      // On desktop, show 2 items, so scroll by container width to show next 2
-      return containerWidth
+      return scrollRef.current.offsetWidth
     }
     return 0
   }
@@ -36,16 +33,10 @@ export default function MenuSection() {
   }
 
   return (
-      <section
-          id="menu"
-          className="py-20 relative"
-          style={{
-            backgroundImage: "url(/background.png)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-      >
+      <section id="menu" className="py-20 relative">
+        {/* Optimized background image */}
+        <Image src="/background.png" alt="Menu background" fill quality={75} sizes="100vw" className="object-cover" />
+
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-5xl md:text-6xl font-bold text-center text-black mb-16">{t("menuTitle")}</h2>
@@ -57,20 +48,13 @@ export default function MenuSection() {
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-20 group hidden md:flex items-center justify-center"
                 aria-label="Previous pizza"
             >
-              <div className="relative">
-                {/* Outer glow ring */}
-                <div className="absolute inset-0 bg-[#cb3b32] rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300 scale-150"></div>
-                {/* Main button */}
-                <div className="relative w-16 h-16 bg-gradient-to-br from-[#cb3b32] to-[#a02e26] rounded-full border-2 border-[#cb3b32]/30 group-hover:border-[#cb3b32] transition-all duration-300 group-hover:scale-110 group-active:scale-95">
-                  {/* Inner highlight */}
-                  <div className="absolute inset-1 bg-gradient-to-br from-white/20 to-transparent rounded-full"></div>
-                  {/* Icon */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <ChevronLeft
-                        size={28}
-                        className="text-white drop-shadow-lg group-hover:translate-x-[-2px] transition-transform duration-200"
-                    />
-                  </div>
+              <div className="relative w-16 h-16 bg-gradient-to-br from-[#cb3b32] to-[#a02e26] rounded-full border-2 border-[#cb3b32]/30 group-hover:border-[#cb3b32] transition-all duration-300 group-hover:scale-110 group-active:scale-95">
+                <div className="absolute inset-1 bg-gradient-to-br from-white/20 to-transparent rounded-full"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <ChevronLeft
+                      size={28}
+                      className="text-white drop-shadow-lg group-hover:translate-x-[-2px] transition-transform duration-200"
+                  />
                 </div>
               </div>
             </button>
@@ -80,20 +64,13 @@ export default function MenuSection() {
                 className="absolute right-4 top-1/2 -translate-y-1/2 z-20 group hidden md:flex items-center justify-center"
                 aria-label="Next pizza"
             >
-              <div className="relative">
-                {/* Outer glow ring */}
-                <div className="absolute inset-0 bg-[#cb3b32] rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300 scale-150"></div>
-                {/* Main button */}
-                <div className="relative w-16 h-16 bg-gradient-to-br from-[#cb3b32] to-[#a02e26] rounded-full border-2 border-[#cb3b32]/30 group-hover:border-[#cb3b32] transition-all duration-300 group-hover:scale-110 group-active:scale-95">
-                  {/* Inner highlight */}
-                  <div className="absolute inset-1 bg-gradient-to-br from-white/20 to-transparent rounded-full"></div>
-                  {/* Icon */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <ChevronRight
-                        size={28}
-                        className="text-white drop-shadow-lg group-hover:translate-x-[2px] transition-transform duration-200"
-                    />
-                  </div>
+              <div className="relative w-16 h-16 bg-gradient-to-br from-[#cb3b32] to-[#a02e26] rounded-full border-2 border-[#cb3b32]/30 group-hover:border-[#cb3b32] transition-all duration-300 group-hover:scale-110 group-active:scale-95">
+                <div className="absolute inset-1 bg-gradient-to-br from-white/20 to-transparent rounded-full"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <ChevronRight
+                      size={28}
+                      className="text-white drop-shadow-lg group-hover:translate-x-[2px] transition-transform duration-200"
+                  />
                 </div>
               </div>
             </button>
@@ -107,7 +84,7 @@ export default function MenuSection() {
                   msOverflowStyle: "none",
                 }}
             >
-              {menuItems.map((item) => (
+              {menuItems.map((item, index) => (
                   <div
                       key={item.id}
                       className="flex-none w-full md:w-[calc(50%-0.75rem)] bg-gray-900 rounded-lg overflow-hidden transition-all duration-300 snap-start group"
@@ -117,6 +94,9 @@ export default function MenuSection() {
                           src={item.image || "/placeholder.svg"}
                           alt={item.name[language]}
                           fill
+                          loading={index < 2 ? "eager" : "lazy"}
+                          quality={85}
+                          sizes="(max-width: 768px) 100vw, 50vw"
                           className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                       />
                     </div>
@@ -132,23 +112,16 @@ export default function MenuSection() {
                   </div>
               ))}
             </div>
-
-            {/* Mobile scroll indicator */}
-            <div className="flex justify-center mt-8 md:hidden">
-              <div className="flex space-x-2">
-                {menuItems.map((_, index) => (
-                    <div key={index} className="w-2 h-2 bg-white/30 rounded-full"></div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 
         <style jsx>{`
-          .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-          }
-        `}</style>
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
       </section>
   )
-}
+})
+
+export default MenuSection
