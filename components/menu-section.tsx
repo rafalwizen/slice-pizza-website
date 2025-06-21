@@ -8,21 +8,30 @@ import { menuItems } from "@/data/menu-items"
 
 export default function MenuSection() {
   const { t } = useLanguage()
+  const { language } = useLanguage()
   const scrollRef = useRef<HTMLDivElement>(null)
+
+  // Calculate scroll distance based on container width
+  const getScrollDistance = () => {
+    if (scrollRef.current) {
+      const containerWidth = scrollRef.current.offsetWidth
+      // On desktop, show 2 items, so scroll by container width to show next 2
+      return containerWidth
+    }
+    return 0
+  }
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      const itemWidth = scrollRef.current.children[0]?.clientWidth || 0
-      const gap = 48 // 3rem gap
-      scrollRef.current.scrollBy({ left: -(itemWidth + gap), behavior: "smooth" })
+      const scrollDistance = getScrollDistance()
+      scrollRef.current.scrollBy({ left: -scrollDistance, behavior: "smooth" })
     }
   }
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      const itemWidth = scrollRef.current.children[0]?.clientWidth || 0
-      const gap = 48 // 3rem gap
-      scrollRef.current.scrollBy({ left: itemWidth + gap, behavior: "smooth" })
+      const scrollDistance = getScrollDistance()
+      scrollRef.current.scrollBy({ left: scrollDistance, behavior: "smooth" })
     }
   }
 
@@ -45,14 +54,14 @@ export default function MenuSection() {
             {/* Navigation Arrows */}
             <button
                 onClick={scrollLeft}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 group hidden md:flex items-center justify-center"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 group hidden md:flex items-center justify-center"
                 aria-label="Previous pizza"
             >
               <div className="relative">
                 {/* Outer glow ring */}
                 <div className="absolute inset-0 bg-[#cb3b32] rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300 scale-150"></div>
                 {/* Main button */}
-                <div className="relative w-16 h-16 bg-gradient-to-br from-[#cb3b32] to-[#a02e26] rounded-full shadow-2xl border-2 border-[#cb3b32]/30 group-hover:border-[#cb3b32] transition-all duration-300 group-hover:scale-110 group-active:scale-95">
+                <div className="relative w-16 h-16 bg-gradient-to-br from-[#cb3b32] to-[#a02e26] rounded-full border-2 border-[#cb3b32]/30 group-hover:border-[#cb3b32] transition-all duration-300 group-hover:scale-110 group-active:scale-95">
                   {/* Inner highlight */}
                   <div className="absolute inset-1 bg-gradient-to-br from-white/20 to-transparent rounded-full"></div>
                   {/* Icon */}
@@ -68,14 +77,14 @@ export default function MenuSection() {
 
             <button
                 onClick={scrollRight}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 group hidden md:flex items-center justify-center"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 group hidden md:flex items-center justify-center"
                 aria-label="Next pizza"
             >
               <div className="relative">
                 {/* Outer glow ring */}
                 <div className="absolute inset-0 bg-[#cb3b32] rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300 scale-150"></div>
                 {/* Main button */}
-                <div className="relative w-16 h-16 bg-gradient-to-br from-[#cb3b32] to-[#a02e26] rounded-full shadow-2xl border-2 border-[#cb3b32]/30 group-hover:border-[#cb3b32] transition-all duration-300 group-hover:scale-110 group-active:scale-95">
+                <div className="relative w-16 h-16 bg-gradient-to-br from-[#cb3b32] to-[#a02e26] rounded-full border-2 border-[#cb3b32]/30 group-hover:border-[#cb3b32] transition-all duration-300 group-hover:scale-110 group-active:scale-95">
                   {/* Inner highlight */}
                   <div className="absolute inset-1 bg-gradient-to-br from-white/20 to-transparent rounded-full"></div>
                   {/* Icon */}
@@ -92,7 +101,7 @@ export default function MenuSection() {
             {/* Scrollable Container */}
             <div
                 ref={scrollRef}
-                className="flex gap-12 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-4 md:px-12"
+                className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-16"
                 style={{
                   scrollbarWidth: "none",
                   msOverflowStyle: "none",
@@ -101,19 +110,24 @@ export default function MenuSection() {
               {menuItems.map((item) => (
                   <div
                       key={item.id}
-                      className="flex-none w-full md:w-[calc(50%-1.5rem)] bg-gray-900 rounded-lg overflow-hidden shadow-2xl hover:shadow-[#cb3b32]/20 transition-shadow duration-300 snap-center"
+                      className="flex-none w-full md:w-[calc(50%-0.75rem)] bg-gray-900 rounded-lg overflow-hidden transition-all duration-300 snap-start group"
                   >
-                    <div className="relative h-80 md:h-96">
-                      <Image src={item.image || "/placeholder.svg"} alt={t(item.nameKey)} fill className="object-cover" />
+                    <div className="relative h-80 md:h-96 overflow-hidden">
+                      <Image
+                          src={item.image || "/placeholder.svg"}
+                          alt={item.name[language]}
+                          fill
+                          className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                      />
                     </div>
 
                     <div className="p-8">
                       <div className="flex justify-between items-start mb-6">
-                        <h3 className="text-3xl md:text-4xl font-bold text-white flex-1">{t(item.nameKey)}</h3>
-                        <span className="text-3xl md:text-4xl font-bold text-[#cb3b32] ml-4">{t(item.priceKey)}</span>
+                        <h3 className="text-3xl md:text-4xl font-bold text-white flex-1">{item.name[language]}</h3>
+                        <span className="text-3xl md:text-4xl font-bold text-[#cb3b32] ml-4">{item.price[language]}</span>
                       </div>
 
-                      <p className="text-xl text-gray-300 leading-relaxed">{t(item.ingredientsKey)}</p>
+                      <p className="text-xl text-gray-300 leading-relaxed">{item.ingredients[language]}</p>
                     </div>
                   </div>
               ))}

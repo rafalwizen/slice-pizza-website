@@ -23,17 +23,11 @@ const translations = {
 
     // Menu
     menuTitle: "Nasze Specjalności",
-    pizza1Name: "Pizza z Gruszką i Gorgonzolą",
-    pizza1Description: "Delikatne plastry gruszki, kremowy gorgonzola i chrupiące orzechy włoskie na cienkim cieście",
-    pizza1Price: "42 zł",
-    pizza2Name: "Tradycyjna Pizza Rzemieślnicza",
-    pizza2Description: "Ręcznie robione ciasto z najlepszych składników, przygotowane według tradycyjnej receptury",
-    pizza2Price: "38 zł",
 
     // About
     aboutTitle: "Nasza Historia",
     aboutText:
-      "Od ponad 20 lat serwujemy najlepsze pizze w mieście. Nasze ciasto przygotowujemy codziennie rano z najwyższej jakości mąki, a składniki pochodzą od lokalnych dostawców. Każda pizza jest przygotowywana z pasją i miłością do włoskiej kuchni.",
+        "Od ponad 20 lat serwujemy najlepsze pizze w mieście. Nasze ciasto przygotowujemy codziennie rano z najwyższej jakości mąki, a składniki pochodzą od lokalnych dostawców. Każda pizza jest przygotowywana z pasją i miłością do włoskiej kuchni.",
 
     // Contact
     contactTitle: "Skontaktuj się z nami",
@@ -60,17 +54,11 @@ const translations = {
 
     // Menu
     menuTitle: "Our Specialties",
-    pizza1Name: "Pear & Gorgonzola Pizza",
-    pizza1Description: "Delicate pear slices, creamy gorgonzola and crunchy walnuts on thin crust",
-    pizza1Price: "$12",
-    pizza2Name: "Traditional Artisan Pizza",
-    pizza2Description: "Hand-made dough with the finest ingredients, prepared according to traditional recipe",
-    pizza2Price: "$11",
 
     // About
     aboutTitle: "Our Story",
     aboutText:
-      "For over 20 years, we have been serving the best pizzas in the city. We prepare our dough fresh every morning using the highest quality flour, and our ingredients come from local suppliers. Every pizza is prepared with passion and love for Italian cuisine.",
+        "For over 20 years, we have been serving the best pizzas in the city. We prepare our dough fresh every morning using the highest quality flour, and our ingredients come from local suppliers. Every pizza is prepared with passion and love for Italian cuisine.",
 
     // Contact
     contactTitle: "Contact Us",
