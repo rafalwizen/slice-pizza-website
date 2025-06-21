@@ -15,8 +15,9 @@ export default function HeroSection() {
   useEffect(() => {
     setIsLoaded(true)
 
-    // CSS Animation instead of GSAP
+    // Start animation immediately when component mounts
     if (logoRef.current) {
+      // Remove any delay - start animation immediately
       logoRef.current.style.animation = "logoEntrance 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards"
     }
 
@@ -65,7 +66,7 @@ export default function HeroSection() {
                 height={150}
                 priority
                 quality={90}
-                className="mx-auto h-24 md:h-32 w-auto mb-8 logo-animation"
+                className="mx-auto h-24 md:h-32 w-auto mb-8 logo-initial"
             />
           </div>
 
@@ -77,18 +78,23 @@ export default function HeroSection() {
         </div>
 
         <style jsx>{`
-        @keyframes logoEntrance {
-          0% {
+          @keyframes logoEntrance {
+            0% {
+              transform: scale(3) rotate(0deg);
+              opacity: 1;
+            }
+            100% {
+              transform: scale(1.5) rotate(720deg);
+              opacity: 1;
+            }
+          }
+
+          /* Logo starts in the initial animation state - no flash! */
+          .logo-initial {
             transform: scale(3) rotate(0deg);
+            opacity: 1;
           }
-          100% {
-            transform: scale(1.5) rotate(720deg);
-          }
-        }
-        .logo-animation {
-          transform: scale(3);
-        }
-      `}</style>
+        `}</style>
       </section>
   )
 }
