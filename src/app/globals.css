@@ -10,6 +10,38 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "SpaceMono";
+  src: url("/fonts/SpaceMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SpaceMono";
+  src: url("/fonts/SpaceMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SpaceMono";
+  src: url("/fonts/SpaceMono-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SpaceMono";
+  src: url("/fonts/SpaceMono-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -55,4 +87,33 @@ body {
 /* Optimize font loading */
 .font-loading {
   font-display: swap;
+}
+
+/* Space Mono utility classes */
+.font-space-mono {
+  font-family: "SpaceMono", monospace;
+}
+
+.font-space-mono-regular {
+  font-family: "SpaceMono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-space-mono-bold {
+  font-family: "SpaceMono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.font-space-mono-italic {
+  font-family: "SpaceMono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.font-space-mono-bold-italic {
+  font-family: "SpaceMono", monospace;
+  font-weight: 700;
+  font-style: italic;
 }

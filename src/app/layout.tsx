@@ -40,6 +40,8 @@ export default function RootLayout({
         <html lang="pl">
         <head>
             <link rel="preload" href="/fonts/BadRendezvousScript.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+            <link rel="preload" href="/fonts/SpaceMono-Regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+            <link rel="preload" href="/fonts/SpaceMono-Bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
             <link rel="preload" href="/logo-round.png" as="image" />
             <link rel="preload" href="/image2.jpeg" as="image" />
         </head>

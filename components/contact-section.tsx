@@ -37,7 +37,7 @@ const ContactSection = memo(function ContactSection() {
             <div>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-lg text-white font-medium mb-2">
+                  <label htmlFor="name" className="block text-lg text-white font-space-mono-bold mb-2">
                     {t("nameLabel")}
                   </label>
                   <input
@@ -47,12 +47,12 @@ const ContactSection = memo(function ContactSection() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-[#cb3b32] focus:outline-none transition-colors duration-200"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-[#cb3b32] focus:outline-none transition-colors duration-200 font-space-mono-regular"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-lg text-white font-medium mb-2">
+                  <label htmlFor="email" className="block text-lg text-white font-space-mono-bold mb-2">
                     {t("emailLabel")}
                   </label>
                   <input
@@ -62,12 +62,12 @@ const ContactSection = memo(function ContactSection() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-[#cb3b32] focus:outline-none transition-colors duration-200"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-[#cb3b32] focus:outline-none transition-colors duration-200 font-space-mono-regular"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-lg text-white font-medium mb-2">
+                  <label htmlFor="message" className="block text-lg text-white font-space-mono-bold mb-2">
                     {t("messageLabel")}
                   </label>
                   <textarea
@@ -77,7 +77,7 @@ const ContactSection = memo(function ContactSection() {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-[#cb3b32] focus:outline-none transition-colors duration-200 resize-vertical"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-[#cb3b32] focus:outline-none transition-colors duration-200 resize-vertical font-space-mono-regular"
                   />
                 </div>
 
@@ -92,18 +92,18 @@ const ContactSection = memo(function ContactSection() {
 
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-[#cb3b32] mb-3">{t("addressTitle")}</h3>
-                <p className="text-lg text-gray-300 whitespace-pre-line">{t("address")}</p>
+                <h3 className="text-2xl font-space-mono-bold text-[#cb3b32] mb-3">{t("addressTitle")}</h3>
+                <p className="text-lg text-gray-300 whitespace-pre-line font-space-mono-regular">{t("address")}</p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-[#cb3b32] mb-3">{t("phoneTitle")}</h3>
-                <p className="text-lg text-gray-300">{t("phone")}</p>
+                <h3 className="text-2xl font-space-mono-bold text-[#cb3b32] mb-3">{t("phoneTitle")}</h3>
+                <p className="text-lg text-gray-300 font-space-mono-regular">{t("phone")}</p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-[#cb3b32] mb-3">{t("hoursTitle")}</h3>
-                <p className="text-lg text-gray-300 whitespace-pre-line">{t("hours")}</p>
+                <h3 className="text-2xl font-space-mono-bold text-[#cb3b32] mb-3">{t("hoursTitle")}</h3>
+                <p className="text-lg text-gray-300 whitespace-pre-line font-space-mono-regular">{t("hours")}</p>
               </div>
             </div>
           </div>
