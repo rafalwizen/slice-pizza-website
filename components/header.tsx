@@ -18,7 +18,14 @@ const Header = memo(function Header() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-[#cb3b32]/20">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-8">
-            <Image src="/logo.png" alt="Slice Pizza Logo" width={120} height={60} priority className="h-12 w-auto" />
+            <Image
+                src="/logo-round.png"
+                alt="Slice Pizza Logo"
+                width={60}
+                height={60}
+                priority
+                className="h-12 w-12 rounded-full"
+            />
             <div className="hidden md:flex space-x-6">
               <button
                   onClick={() => scrollToSection("menu")}

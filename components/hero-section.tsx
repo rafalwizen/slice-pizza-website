@@ -60,13 +60,13 @@ export default function HeroSection() {
           <div className="mb-8">
             <Image
                 ref={logoRef}
-                src="/logo.png"
+                src="/logo-round.png"
                 alt="Slice Pizza Logo"
-                width={300}
-                height={150}
+                width={200}
+                height={200}
                 priority
                 quality={90}
-                className="mx-auto h-24 md:h-32 w-auto mb-8 logo-initial"
+                className="mx-auto w-32 h-32 md:w-40 md:h-40 mb-8 logo-initial rounded-full"
             />
           </div>
 
