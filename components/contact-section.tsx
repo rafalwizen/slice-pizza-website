@@ -1,32 +1,17 @@
 "use client"
 
-import type React from "react"
 import { useLanguage } from "@/contexts/language-context"
-import { useState, memo, useCallback } from "react"
+import { memo } from "react"
 
 const ContactSection = memo(function ContactSection() {
   const { t } = useLanguage()
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
 
-  const handleSubmit = useCallback(
-      (e: React.FormEvent) => {
-        e.preventDefault()
-        console.log("Form submitted:", formData)
-        setFormData({ name: "", email: "", message: "" })
-      },
-      [formData],
-  )
-
-  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }))
-  }, [])
+  const openInGoogleMaps = () => {
+    const address = "ul. Zamkowa 6, 42-600 Tarnowskie Góry, Poland"
+    const encodedAddress = encodeURIComponent(address)
+    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`
+    window.open(googleMapsUrl, "_blank")
+  }
 
   return (
       <section id="contact" className="py-20 bg-black">
@@ -34,62 +19,36 @@ const ContactSection = memo(function ContactSection() {
           <h2 className="text-5xl md:text-6xl font-bold text-center text-[#cb3b32] mb-16">{t("contactTitle")}</h2>
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <div>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-lg text-white font-space-mono-bold mb-2">
-                    {t("nameLabel")}
-                  </label>
-                  <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-[#cb3b32] focus:outline-none transition-colors duration-200 font-space-mono-regular"
-                  />
-                </div>
+            {/* Google Maps */}
+            <div className="relative">
+              <div className="relative w-full h-96 lg:h-full min-h-[400px] rounded-lg overflow-hidden shadow-2xl cursor-pointer">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2554.8234567890123!2d18.8567890123456!3d50.4567890123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDI3JzI0LjQiTiAxOMKwNTEnMjQuNCJF!5e0!3m2!1spl!2spl!4v1234567890123!5m2!1spl!2spl&q=ul.+Zamkowa+6,+42-600+Tarnowskie+Góry"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="absolute inset-0"
+                    title="Lokalizacja restauracji Slice Pizza"
+                />
 
-                <div>
-                  <label htmlFor="email" className="block text-lg text-white font-space-mono-bold mb-2">
-                    {t("emailLabel")}
-                  </label>
-                  <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-[#cb3b32] focus:outline-none transition-colors duration-200 font-space-mono-regular"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-lg text-white font-space-mono-bold mb-2">
-                    {t("messageLabel")}
-                  </label>
-                  <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={5}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-[#cb3b32] focus:outline-none transition-colors duration-200 resize-vertical font-space-mono-regular"
-                  />
-                </div>
-
+                {/* Overlay button */}
                 <button
-                    type="submit"
-                    className="w-full bg-[#cb3b32] text-white text-lg font-bold py-3 px-6 rounded-lg hover:bg-[#b33429] transition-colors duration-200"
-                >
-                  {t("sendButton")}
-                </button>
-              </form>
+                    onClick={openInGoogleMaps}
+                    className="absolute inset-0 w-full h-full bg-transparent cursor-pointer"
+                    aria-label={t("openMapsLabel")}
+                />
+              </div>
+
+              {/* Instructions text - visible on mobile */}
+              <div className="mt-4 lg:hidden">
+                <p className="text-gray-400 font-space-mono-regular text-sm text-center">{t("mapInstruction")}</p>
+              </div>
             </div>
 
+            {/* Contact Info */}
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-space-mono-bold text-[#cb3b32] mb-3">{t("addressTitle")}</h3>
@@ -98,12 +57,22 @@ const ContactSection = memo(function ContactSection() {
 
               <div>
                 <h3 className="text-2xl font-space-mono-bold text-[#cb3b32] mb-3">{t("phoneTitle")}</h3>
-                <p className="text-lg text-gray-300 font-space-mono-regular">{t("phone")}</p>
+                <a
+                    href="tel:+48123456789"
+                    className="text-lg text-gray-300 font-space-mono-regular hover:text-[#cb3b32] transition-colors duration-200"
+                >
+                  {t("phone")}
+                </a>
               </div>
 
               <div>
                 <h3 className="text-2xl font-space-mono-bold text-[#cb3b32] mb-3">{t("hoursTitle")}</h3>
                 <p className="text-lg text-gray-300 whitespace-pre-line font-space-mono-regular">{t("hours")}</p>
+              </div>
+
+              {/* Instructions text - visible on desktop */}
+              <div className="pt-6 border-t border-gray-700 hidden lg:block">
+                <p className="text-gray-400 font-space-mono-regular text-sm">{t("mapInstruction")}</p>
               </div>
             </div>
           </div>
