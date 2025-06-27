@@ -58,7 +58,7 @@ const ContactSection = memo(function ContactSection() {
               <div>
                 <h3 className="text-2xl font-space-mono-bold text-[#cb3b32] mb-3">{t("phoneTitle")}</h3>
                 <a
-                    href="tel:+48123456789"
+                    href="tel:+48722720000"
                     className="text-lg text-gray-300 font-space-mono-regular hover:text-[#cb3b32] transition-colors duration-200"
                 >
                   {t("phone")}

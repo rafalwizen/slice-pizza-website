@@ -3,25 +3,27 @@ import type { Metadata, Viewport } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://slice-pizza-tg.vercel.app"), // Zmień na swoją domenę
-    title: "Slice Pizza - Autentyczne smaki Włoch",
-    description: "Najlepsza pizzeria w mieście. Autentyczne włoskie smaki przygotowane z pasją.",
-    keywords: "pizza, pizzeria, włoska kuchnia, dostawa pizzy, Warszawa",
-    authors: [{ name: "Slice Pizza" }],
+    metadataBase: new URL("https://slicepizzatg.pl"),
+    title: "Slice Pizza TG - Autentyczne smaki Włoch | Tarnowskie Góry",
+    description:
+        "Najlepsza pizzeria w Tarnowskich Górach. Autentyczne włoskie smaki przygotowane z pasją. ul. Zamkowa 6. Zamów: 722 720 000",
+    keywords: "pizza, pizzeria, włoska kuchnia, dostawa pizzy, Tarnowskie Góry, Slice Pizza TG, ul. Zamkowa 6",
+    authors: [{ name: "Slice Pizza TG" }],
     robots: "index, follow",
     openGraph: {
-        title: "Slice Pizza - Autentyczne smaki Włoch",
-        description: "Najlepsza pizzeria w mieście. Autentyczne włoskie smaki przygotowane z pasją.",
+        title: "Slice Pizza TG - Autentyczne smaki Włoch | Tarnowskie Góry",
+        description:
+            "Najlepsza pizzeria w Tarnowskich Górach. Autentyczne włoskie smaki przygotowane z pasją. ul. Zamkowa 6. Zamów: 722 720 000",
         type: "website",
         locale: "pl_PL",
-        url: "https://slice-pizza-tg.vercel.app", // Zmień na swoją domenę
-        siteName: "Slice Pizza",
-        images: ["logo.png"]
+        url: "https://slicepizzatg.pl",
+        siteName: "Slice Pizza TG",
     },
     twitter: {
         card: "summary_large_image",
-        title: "Slice Pizza - Autentyczne smaki Włoch",
-        description: "Najlepsza pizzeria w mieście. Autentyczne włoskie smaki przygotowane z pasją.",
+        title: "Slice Pizza TG - Autentyczne smaki Włoch | Tarnowskie Góry",
+        description:
+            "Najlepsza pizzeria w Tarnowskich Górach. Autentyczne włoskie smaki przygotowane z pasją. ul. Zamkowa 6. Zamów: 722 720 000",
     },
 }
 
