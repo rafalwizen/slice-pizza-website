@@ -27,18 +27,18 @@ const Header = memo(function Header() {
                 className="h-12 w-12 rounded-full"
             />
             <div className="hidden md:flex space-x-6">
-              <button
-                  onClick={() => scrollToSection("menu")}
-                  className="text-xl text-white hover:text-[#cb3b32] transition-colors duration-200"
-              >
-                {t("menu")}
-              </button>
-              <button
-                  onClick={() => scrollToSection("about")}
-                  className="text-xl text-white hover:text-[#cb3b32] transition-colors duration-200"
-              >
-                {t("about")}
-              </button>
+              {/*<button*/}
+              {/*    onClick={() => scrollToSection("menu")}*/}
+              {/*    className="text-xl text-white hover:text-[#cb3b32] transition-colors duration-200"*/}
+              {/*>*/}
+              {/*  {t("menu")}*/}
+              {/*</button>*/}
+              {/*<button*/}
+              {/*    onClick={() => scrollToSection("about")}*/}
+              {/*    className="text-xl text-white hover:text-[#cb3b32] transition-colors duration-200"*/}
+              {/*>*/}
+              {/*  {t("about")}*/}
+              {/*</button>*/}
               <button
                   onClick={() => scrollToSection("contact")}
                   className="text-xl text-white hover:text-[#cb3b32] transition-colors duration-200"

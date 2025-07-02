@@ -23,8 +23,8 @@ export default function Home() {
           <Header />
           <main>
             <HeroSection />
-            <MenuSection />
-            <AboutSection />
+            {/*<MenuSection />*/}
+            {/*<AboutSection />*/}
             <ContactSection />
           </main>
         </div>
