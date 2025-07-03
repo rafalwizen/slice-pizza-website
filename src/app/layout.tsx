@@ -18,6 +18,7 @@ export const metadata: Metadata = {
         locale: "pl_PL",
         url: "https://slicepizzatg.pl",
         siteName: "Slice Pizza TG",
+        images: ["logo-round.png"]
     },
     twitter: {
         card: "summary_large_image",
