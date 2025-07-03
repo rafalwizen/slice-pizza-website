@@ -4,7 +4,7 @@ import Header from "@/components/header"
 import HeroSection from "@/components/hero-section"
 
 // Lazy load non-critical components
-const MenuSection = dynamic(() => import("@/components/menu-section"), {
+const MenuSection = dynamic(() => import("@/components/menu-photos"), {
   loading: () => <div className="h-screen bg-gray-900 animate-pulse" />,
 })
 
@@ -25,6 +25,7 @@ export default function Home() {
             <HeroSection />
             {/*<MenuSection />*/}
             {/*<AboutSection />*/}
+            <MenuSection />
             <ContactSection />
           </main>
         </div>
