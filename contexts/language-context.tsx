@@ -18,8 +18,11 @@ const translations = {
     contact: "Kontakt",
 
     // Hero
-    heroTitle: "Pizza nie musi być szybka...\nMusi być dobra!",
-    heroSubtitle: "U nas liczy się smak, nie skróty.",
+    heroTitle: "Slice to meet You",
+    heroSubtitle: "Najlepsza pizza w mieście!",
+    heroSubtitle2: "Włoskie smaki",
+    heroSubtitle3: "Świeże składniki",
+    heroSubtitle4: "Chrupiące ciasto",
 
     // Menu
     menuTitle: "Nasze Specjalności",
@@ -52,8 +55,11 @@ const translations = {
     contact: "Contact",
 
     // Hero
-    heroTitle: "Pizza doesn't have to be fast...\nIt has to be good!",
-    heroSubtitle: "Here, taste matters, not shortcuts.",
+    heroTitle: "Slice to meet You",
+    heroSubtitle: "The best pizza in town!",
+    heroSubtitle2: "Authentic Italian taste",
+    heroSubtitle3: "Fresh ingredients",
+    heroSubtitle4: "Crispy crust",
 
     // Menu
     menuTitle: "Our Specialties",

@@ -56,25 +56,39 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/60 z-10"></div>
 
         {/* Content */}
-        <div className="relative z-20 text-center px-4 max-w-6xl mx-auto">
-          <div className="mb-8">
-            <Image
-                ref={logoRef}
-                src="/logo-round.png"
-                alt="Slice Pizza Logo"
-                width={200}
-                height={200}
-                priority
-                quality={90}
-                className="mx-auto w-32 h-32 md:w-40 md:h-40 mb-8 logo-initial rounded-full"
-            />
-          </div>
+        <div className="relative z-20 text-center px-4 max-w-7xl mx-auto">
+        {/*<div className="mb-8">*/}
+          {/*  <Image*/}
+          {/*      ref={logoRef}*/}
+          {/*      src="/logo-round.png"*/}
+          {/*      alt="Slice Pizza Logo"*/}
+          {/*      width={200}*/}
+          {/*      height={200}*/}
+          {/*      priority*/}
+          {/*      quality={90}*/}
+          {/*      className="mx-auto w-32 h-32 md:w-40 md:h-40 mb-8 logo-initial rounded-full"*/}
+          {/*  />*/}
+          {/*</div>*/}
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-[#cb3b32] mb-6 leading-tight whitespace-pre-line">
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold text-[#cb3b32] mb-6 leading-tight whitespace-pre-line">
             {t("heroTitle")}
           </h1>
 
-          <p className="text-2xl md:text-3xl text-white/90 max-w-2xl mx-auto leading-relaxed">{t("heroSubtitle")}</p>
+          <p className="text-2xl md:text-4xl text-white/90 max-w-none mx-auto leading-relaxed font-space-mono">
+            {t("heroSubtitle")}
+          </p>
+          <p className="text-2xl md:text-4xl text-white/90 max-w-none w-full leading-relaxed font-space-mono">
+            {t("heroSubtitle2")}
+          </p>
+          <p className="text-2xl md:text-4xl text-white/90 max-w-none w-full leading-relaxed font-space-mono">
+            {t("heroSubtitle3")}
+          </p>
+          <p className="text-2xl md:text-4xl text-white/90 max-w-none w-full leading-relaxed font-space-mono">
+            {t("heroSubtitle4")}
+          </p>
+
+
+
         </div>
 
         <style jsx>{`

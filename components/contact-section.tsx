@@ -16,7 +16,7 @@ const ContactSection = memo(function ContactSection() {
   return (
       <section id="contact" className="py-20 bg-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl md:text-6xl font-bold text-center text-[#cb3b32] mb-16">{t("contactTitle")}</h2>
+          <h2 className="text-5xl md:text-6xl font-bold font-space-mono-bold text-center text-[#cb3b32] mb-16">{t("contactTitle")}</h2>
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Google Maps */}

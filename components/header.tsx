@@ -21,11 +21,12 @@ const Header = memo(function Header() {
             <Image
                 src="/logo-round.png"
                 alt="Slice Pizza Logo"
-                width={60}
-                height={60}
+                width={80}
+                height={80}
                 priority
-                className="h-12 w-12 rounded-full"
+                className="h-20 w-20 rounded-full"
             />
+
             <div className="hidden md:flex space-x-6">
               {/*<button*/}
               {/*    onClick={() => scrollToSection("menu")}*/}
