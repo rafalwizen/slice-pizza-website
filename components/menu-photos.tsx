@@ -34,11 +34,14 @@ const MenuSection = memo(function MenuSection() {
                             <img
                                 src={src}
                                 alt={alt}
-                                className="object-cover w-full h-full rounded-lg"
+                                className={`w-full h-full rounded-lg ${
+                                    src === "/menu1.webp" ? "object-contain bg-black" : "object-cover"
+                                }`}
                                 loading="lazy"
                             />
                         </div>
                     ))}
+
                 </div>
             </div>
 
