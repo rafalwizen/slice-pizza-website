@@ -56,7 +56,8 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/60 z-10"></div>
 
         {/* Content */}
-        <div className="relative z-20 text-center px-4 max-w-7xl mx-auto">
+        <div className="relative z-20 text-center px-4 max-w-7xl mx-auto mt-24">
+
         {/*<div className="mb-8">*/}
           {/*  <Image*/}
           {/*      ref={logoRef}*/}
