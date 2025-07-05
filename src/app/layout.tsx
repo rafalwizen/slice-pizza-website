@@ -4,21 +4,21 @@ import "./globals.css"
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://slicepizzatg.pl"),
-    title: "Slice Pizza TG - Autentyczne smaki Włoch | Tarnowskie Góry",
+    title: "Slice Pizza | Tarnowskie Góry",
     description:
         "Najlepsza pizzeria w Tarnowskich Górach. Autentyczne włoskie smaki przygotowane z pasją. ul. Zamkowa 6. Zamów: 722 720 000",
     keywords: "pizza, pizzeria, włoska kuchnia, dostawa pizzy, Tarnowskie Góry, Slice Pizza TG, ul. Zamkowa 6",
     authors: [{ name: "Slice Pizza TG" }],
     robots: "index, follow",
     openGraph: {
-        title: "Slice Pizza TG - Autentyczne smaki Włoch | Tarnowskie Góry",
+        title: "Slice Pizza | Tarnowskie Góry",
         description:
             "Najlepsza pizzeria w Tarnowskich Górach. Autentyczne włoskie smaki przygotowane z pasją. ul. Zamkowa 6. Zamów: 722 720 000",
         type: "website",
         locale: "pl_PL",
         url: "https://slicepizzatg.pl",
         siteName: "Slice Pizza TG",
-        images: ["logo-round.png"]
+        images: ["/slice-logo.png"]
     },
     twitter: {
         card: "summary_large_image",
