@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     authors: [{ name: "Slice Pizza TG" }],
     robots: "index, follow",
     openGraph: {
-        title: "Slice Pizza - Tarnowskie Góry",
+        title: "Slice Pizza Tarnowskie Góry",
         description:
             "Najlepsza pizzeria w Tarnowskich Górach. Autentyczne włoskie smaki przygotowane z pasją. ul. Zamkowa 6. Zamów: 722 720 000",
         type: "website",

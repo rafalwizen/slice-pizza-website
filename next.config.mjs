@@ -4,6 +4,8 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
 
+  output: 'export',
+
   // Image optimization
   images: {
     formats: ['image/webp', 'image/avif'],
