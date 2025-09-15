@@ -6,7 +6,7 @@ import { useLanguage } from "@/contexts/language-context";
 
 interface DeliveryOption {
     name: string;
-    icon: string; // ścieżka do obrazka
+    icon: string;
     url: string;
 }
 
@@ -32,7 +32,7 @@ const DeliveryLinks: React.FC = () => {
     const { t } = useLanguage();
 
     return (
-        <>
+        <div className="mb-16">
             <h2 className="text-5xl md:text-6xl font-bold font-space-mono-bold text-center text-[#cb3b32] mb-16">
                 {t("orderTitle")}
             </h2>
@@ -59,7 +59,7 @@ const DeliveryLinks: React.FC = () => {
                     </a>
                 ))}
             </div>
-        </>
+        </div>
     );
 };
 
