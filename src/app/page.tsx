@@ -12,8 +12,12 @@ const AboutSection = dynamic(() => import("@/components/about-section"), {
   loading: () => <div className="h-96 bg-gray-900 animate-pulse" />,
 })
 
-const ContactSection = dynamic(() => import("@/components/contact-section"), {
+const OrderSection = dynamic(() => import("@/components/order-section"), {
   loading: () => <div className="h-screen bg-black animate-pulse" />,
+})
+
+const ContactSection = dynamic(() => import("@/components/contact-section"), {
+    loading: () => <div className="h-screen bg-black animate-pulse" />,
 })
 
 export default function Home() {
@@ -27,6 +31,7 @@ export default function Home() {
             {/*<AboutSection />*/}
             <MenuSection />
             <ContactSection />
+            <OrderSection />
           </main>
         </div>
       </LanguageProvider>
