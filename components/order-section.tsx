@@ -13,17 +13,17 @@ interface DeliveryOption {
 const deliveryOptions: DeliveryOption[] = [
     {
         name: "Pyszne.pl",
-        icon: "/icons/pyszne.png",
+        icon: "/pyszne.png",
         url: "https://www.pyszne.pl/menu/slice-pizza-tarnowskie-gory?serviceType=delivery&utm_source=google&utm_medium=organic&utm_campaign=foodorder",
     },
     {
         name: "Glovo",
-        icon: "/icons/glovo.png",
+        icon: "/glovo.png",
         url: "https://glovoapp.com/pl/pl/tarnowskie-gory/slice-pizza-tgr/?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action",
     },
     {
         name: "Uber Eats",
-        icon: "/icons/ubereats.png",
+        icon: "/ubereats.png",
         url: "https://www.ubereats.com/pl/store/slice-pizza-tg/Uhnhce9OXDSdn27GjX4_dQ?utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas",
     },
 ];
