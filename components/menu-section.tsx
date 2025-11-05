@@ -43,7 +43,7 @@ const MenuCategorySection = memo(function MenuCategorySection({ category }: { ca
                     className="absolute left-4 top-1/2 -translate-y-1/2 z-20 group hidden md:flex items-center justify-center"
                     aria-label={`Previous ${category.name[language]}`}
                 >
-                    <div className="relative w-16 h-16 bg-gradient-to-br from-[#cb3b32] to-[#a02e26] rounded-full border-2 border-[#cb3b32]/30 group-hover:border-[#cb3b32] transition-all duration-300 group-hover:scale-110 group-active:scale-95">
+                    <div className="relative w-16 h-16 bg-gradient-to-br from-[#ff8d2f] to-[#a02e26] rounded-full border-2 border-[#ff8d2f]/30 group-hover:border-[#ff8d2f] transition-all duration-300 group-hover:scale-110 group-active:scale-95">
                         <div className="absolute inset-1 bg-gradient-to-br from-white/20 to-transparent rounded-full"></div>
                         <div className="absolute inset-0 flex items-center justify-center">
                             <ChevronLeft
@@ -59,7 +59,7 @@ const MenuCategorySection = memo(function MenuCategorySection({ category }: { ca
                     className="absolute right-4 top-1/2 -translate-y-1/2 z-20 group hidden md:flex items-center justify-center"
                     aria-label={`Next ${category.name[language]}`}
                 >
-                    <div className="relative w-16 h-16 bg-gradient-to-br from-[#cb3b32] to-[#a02e26] rounded-full border-2 border-[#cb3b32]/30 group-hover:border-[#cb3b32] transition-all duration-300 group-hover:scale-110 group-active:scale-95">
+                    <div className="relative w-16 h-16 bg-gradient-to-br from-[#ff8d2f] to-[#a02e26] rounded-full border-2 border-[#ff8d2f]/30 group-hover:border-[#ff8d2f] transition-all duration-300 group-hover:scale-110 group-active:scale-95">
                         <div className="absolute inset-1 bg-gradient-to-br from-white/20 to-transparent rounded-full"></div>
                         <div className="absolute inset-0 flex items-center justify-center">
                             <ChevronRight
@@ -101,7 +101,7 @@ const MenuCategorySection = memo(function MenuCategorySection({ category }: { ca
                                     <h3 className="text-3xl md:text-4xl font-space-mono-bold text-white flex-1 uppercase">
                                         {item.name[language]}
                                     </h3>
-                                    <span className="text-3xl md:text-4xl font-bold text-[#cb3b32] ml-4">{item.price[language]}</span>
+                                    <span className="text-3xl md:text-4xl font-bold text-[#ff8d2f] ml-4">{item.price[language]}</span>
                                 </div>
 
                                 <p className="text-xl text-gray-300 leading-relaxed font-space-mono-regular uppercase">

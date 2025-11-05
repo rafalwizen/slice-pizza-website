@@ -71,7 +71,7 @@ export default function HeroSection() {
           {/*  />*/}
           {/*</div>*/}
 
-          <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold text-[#cb3b32] mb-6 leading-tight whitespace-pre-line">
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold text-[#ff8d2f] mb-6 leading-tight whitespace-pre-line">
             {t("heroTitle")}
           </h1>
 

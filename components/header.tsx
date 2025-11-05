@@ -15,7 +15,7 @@ const Header = memo(function Header() {
   }, [])
 
   return (
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-[#cb3b32]/20">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-[#ff8d2f]/20">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-8">
             <Image
@@ -30,19 +30,19 @@ const Header = memo(function Header() {
             <div className="hidden md:flex space-x-6">
               {/*<button*/}
               {/*    onClick={() => scrollToSection("menu")}*/}
-              {/*    className="text-xl text-white hover:text-[#cb3b32] transition-colors duration-200"*/}
+              {/*    className="text-xl text-white hover:text-[#ff8d2f] transition-colors duration-200"*/}
               {/*>*/}
               {/*  {t("menu")}*/}
               {/*</button>*/}
               {/*<button*/}
               {/*    onClick={() => scrollToSection("about")}*/}
-              {/*    className="text-xl text-white hover:text-[#cb3b32] transition-colors duration-200"*/}
+              {/*    className="text-xl text-white hover:text-[#ff8d2f] transition-colors duration-200"*/}
               {/*>*/}
               {/*  {t("about")}*/}
               {/*</button>*/}
               <button
                   onClick={() => scrollToSection("contact")}
-                  className="text-xl text-white hover:text-[#cb3b32] transition-colors duration-200"
+                  className="text-xl text-white hover:text-[#ff8d2f] transition-colors duration-200"
               >
                 {t("contact")}
               </button>
@@ -54,7 +54,7 @@ const Header = memo(function Header() {
               <button
                   onClick={() => setLanguage("pl")}
                   className={`px-3 py-1 rounded text-base font-medium transition-colors duration-200 ${
-                      language === "pl" ? "bg-[#cb3b32] text-white" : "text-gray-300 hover:text-white"
+                      language === "pl" ? "bg-[#ff8d2f] text-white" : "text-gray-300 hover:text-white"
                   }`}
               >
                 PL
@@ -62,7 +62,7 @@ const Header = memo(function Header() {
               <button
                   onClick={() => setLanguage("en")}
                   className={`px-3 py-1 rounded text-base font-medium transition-colors duration-200 ${
-                      language === "en" ? "bg-[#cb3b32] text-white" : "text-gray-300 hover:text-white"
+                      language === "en" ? "bg-[#ff8d2f] text-white" : "text-gray-300 hover:text-white"
                   }`}
               >
                 EN

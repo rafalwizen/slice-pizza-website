@@ -33,7 +33,7 @@ const DeliveryLinks: React.FC = () => {
 
     return (
         <div className="mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold font-space-mono-bold text-center text-[#cb3b32] mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold font-space-mono-bold text-center text-[#ff8d2f] mb-16">
                 {t("orderTitle")}
             </h2>
 

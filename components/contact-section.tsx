@@ -16,7 +16,7 @@ const ContactSection = memo(function ContactSection() {
   return (
       <section id="contact" className="py-20 bg-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl md:text-6xl font-bold font-space-mono-bold text-center text-[#cb3b32] mb-16">{t("contactTitle")}</h2>
+          <h2 className="text-5xl md:text-6xl font-bold font-space-mono-bold text-center text-[#ff8d2f] mb-16">{t("contactTitle")}</h2>
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Google Maps */}
@@ -51,22 +51,22 @@ const ContactSection = memo(function ContactSection() {
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-space-mono-bold text-[#cb3b32] mb-3">{t("addressTitle")}</h3>
+                <h3 className="text-2xl font-space-mono-bold text-[#ff8d2f] mb-3">{t("addressTitle")}</h3>
                 <p className="text-lg text-gray-300 whitespace-pre-line font-space-mono-regular">{t("address")}</p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-space-mono-bold text-[#cb3b32] mb-3">{t("phoneTitle")}</h3>
+                <h3 className="text-2xl font-space-mono-bold text-[#ff8d2f] mb-3">{t("phoneTitle")}</h3>
                 <a
                     href="tel:+48722720000"
-                    className="text-lg text-gray-300 font-space-mono-regular hover:text-[#cb3b32] transition-colors duration-200"
+                    className="text-lg text-gray-300 font-space-mono-regular hover:text-[#ff8d2f] transition-colors duration-200"
                 >
                   {t("phone")}
                 </a>
               </div>
 
               <div>
-                <h3 className="text-2xl font-space-mono-bold text-[#cb3b32] mb-3">{t("hoursTitle")}</h3>
+                <h3 className="text-2xl font-space-mono-bold text-[#ff8d2f] mb-3">{t("hoursTitle")}</h3>
                 <p className="text-lg text-gray-300 whitespace-pre-line font-space-mono-regular">{t("hours")}</p>
               </div>
 

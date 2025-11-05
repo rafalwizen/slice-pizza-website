@@ -64,7 +64,7 @@ const config: Config = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        "pizza-red": "#cb3b32",
+        "pizza-red": "#ff8d2f",
       },
       borderRadius: {
         lg: "var(--radius)",
