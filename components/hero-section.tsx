@@ -62,7 +62,7 @@ export default function HeroSection() {
           {/*  <Image*/}
           {/*      ref={logoRef}*/}
           {/*      src="/logo-round.png"*/}
-          {/*      alt="Slice Pizza Logo"*/}
+          {/*      alt="ProstoKątna Logo"*/}
           {/*      width={200}*/}
           {/*      height={200}*/}
           {/*      priority*/}

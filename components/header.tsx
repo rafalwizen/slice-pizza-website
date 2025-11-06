@@ -20,7 +20,7 @@ const Header = memo(function Header() {
           <div className="flex items-center space-x-8">
             <Image
                 src="/logo-round.png"
-                alt="Slice Pizza Logo"
+                alt="ProstoKątna Logo"
                 width={80}
                 height={80}
                 priority

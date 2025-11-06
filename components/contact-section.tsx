@@ -31,7 +31,7 @@ const ContactSection = memo(function ContactSection() {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     className="absolute inset-0"
-                    title="Lokalizacja restauracji Slice Pizza"
+                    title="Lokalizacja restauracji ProstoKątna"
                 />
 
                 {/* Overlay button */}
