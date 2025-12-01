@@ -81,12 +81,6 @@ export default function HeroSection() {
           <p className="text-2xl md:text-4xl text-white/90 max-w-none w-full leading-relaxed font-space-mono">
             {t("heroSubtitle2")}
           </p>
-          <p className="text-2xl md:text-4xl text-white/90 max-w-none w-full leading-relaxed font-space-mono">
-            {t("heroSubtitle3")}
-          </p>
-          <p className="text-2xl md:text-4xl text-white/90 max-w-none w-full leading-relaxed font-space-mono">
-            {t("heroSubtitle4")}
-          </p>
 
 
 

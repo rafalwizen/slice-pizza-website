@@ -18,11 +18,9 @@ const translations = {
         contact: "Kontakt",
 
         // Hero
-        heroTitle: "Slice to meet You",
-        heroSubtitle: "Najlepsza pizza w mieście!",
-        heroSubtitle2: "Włoskie smaki",
-        heroSubtitle3: "Świeże składniki",
-        heroSubtitle4: "Chrupiące ciasto",
+        heroTitle: "ProstoKątna",
+        heroSubtitle: "Pizza z sercem i wspomnieniami",
+        heroSubtitle2: "Nieokrągła. Nieprzypadkowa",
 
         // Menu
         menuTitle: "Nasze Specjalności",
@@ -58,11 +56,9 @@ const translations = {
         contact: "Contact",
 
         // Hero
-        heroTitle: "Slice to meet You",
-        heroSubtitle: "The best pizza in town!",
-        heroSubtitle2: "Authentic Italian taste",
-        heroSubtitle3: "Fresh ingredients",
-        heroSubtitle4: "Crispy crust",
+        heroTitle: "ProstoKątna",
+        heroSubtitle: "Pizza with heart and memories",
+        heroSubtitle2: "Not round. Not accidental",
 
         // Menu
         menuTitle: "Our Specialties",
