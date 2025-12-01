@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         locale: "pl_PL",
         url: "https://slicepizzatg.pl",
         siteName: "ProstoKątna TG",
-        images: ["/logo-opengraph.png"]
+        images: ["/logo-opengraph-new.png"]
     },
     twitter: {
         card: "summary_large_image",
