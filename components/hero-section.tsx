@@ -98,11 +98,6 @@ export default function HeroSection() {
             }
           }
 
-          /* Logo starts in the initial animation state - no flash! */
-          .logo-initial {
-            transform: scale(3) rotate(0deg);
-            opacity: 1;
-          }
         `}</style>
       </section>
   )
