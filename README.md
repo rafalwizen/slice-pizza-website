@@ -1,6 +1,6 @@
 [![pl](https://img.shields.io/badge/lang-pl-blue.svg)](https://github.com/rafalwizen/slice-pizza-website/blob/master/README.pl.md)
 # Slice Pizza
-[Visit Live App](https://slicepizzatg.pl/)
+[Visit Live App](https://slice-pizza-tg.vercel.app/)
 
 ## Technology
 - [Next.js](https://nextjs.org)

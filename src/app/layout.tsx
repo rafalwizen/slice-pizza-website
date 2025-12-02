@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://slicepizzatg.pl"),
+    metadataBase: new URL("https://slice-pizza-tg.vercel.app"),
     title: "ProstoKątna - Tarnowskie Góry",
     description:
         "Najlepsza pizzeria w Tarnowskich Górach. Autentyczne włoskie smaki przygotowane z pasją. ul. Zamkowa 6. Zamów: 722 720 000",
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
             "Najlepsza pizzeria w Tarnowskich Górach. Autentyczne włoskie smaki przygotowane z pasją. ul. Zamkowa 6. Zamów: 722 720 000",
         type: "website",
         locale: "pl_PL",
-        url: "https://slicepizzatg.pl",
+        url: "https://slice-pizza-tg.vercel.app",
         siteName: "ProstoKątna TG",
-        images: ["/logo-opengraph-new.png"]
+        images: ["/logo-opengraph-v2.png"]
     },
     twitter: {
         card: "summary_large_image",

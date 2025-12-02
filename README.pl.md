@@ -1,6 +1,6 @@
 [![en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/rafalwizen/slice-pizza-website/blob/master/README.md)
 # Slice Pizza
-[Zobacz stronę na żywo](https://slicepizzatg.pl/)
+[Zobacz stronę na żywo](https://slice-pizza-tg.vercel.app/)
 
 ## Technologia
 - [Next.js](https://nextjs.org)
