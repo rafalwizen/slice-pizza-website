@@ -73,7 +73,7 @@ export default function HeroSection() {
 
                 <div className="mb-6">
                     <Image
-                        src="/prostokatna-logo.png"
+                        src="/logo-hero-section.png"
                         alt="ProstoKątna"
                         width={800}
                         height={200}
@@ -82,10 +82,6 @@ export default function HeroSection() {
                         className="mx-auto w-full max-w-4xl h-auto"
                     />
                 </div>
-
-                <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold text-[#ff8d2f] mb-6 leading-tight whitespace-pre-line">
-                    {t("heroTitle")}
-                </h1>
 
                 <p className="text-2xl md:text-4xl text-white/90 max-w-none mx-auto leading-relaxed font-space-mono">
                     {t("heroSubtitle")}
