@@ -42,7 +42,7 @@ const Header = memo(function Header() {
               {/*</button>*/}
               <button
                   onClick={() => scrollToSection("contact")}
-                  className="text-xl text-white hover:text-[#ff8d2f] transition-colors duration-200"
+                  className="text-xl text-white hover:text-[#ff8d2f] font-bold font-space-mono-bold transition-colors duration-200"
               >
                 {t("contact")}
               </button>
